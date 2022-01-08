@@ -242,3 +242,41 @@ movable.addEventListener('dblclick', function(event) {
   }, { once: true });
 
 });
+
+var tableContainer = document.getElementById('table-container');
+
+tableContainer.addEventListener('scroll', function(event) {
+  console.log('table scroll', event.target.scrollTop);
+});
+
+var buttons = document.getElementsByClassName('button-test');
+
+for (var i = 0; i < buttons.length; i++) {
+  var button = buttons[i];
+
+  button.addEventListener('click', function(event) {
+    event.target.innerText = 'clicked';
+    console.log(event.target.id);
+  });
+
+}
+
+
+// document.addEventListener('scroll', function(event) {
+//   console.log('document scroll', event.target.scrollTop);
+// });
+
+/*
+ * Zadanie 9
+  Napisz skrypt pozwalający na wyświetlenie obok scrollowanego elementu wskaźnik postępu przewijania w procentach.
+*/
+
+var scroller = document.getElementById('table-container');
+var progress = document.getElementById('progress');
+
+scroller.addEventListener('scroll', function(event) {
+  var percent = Math.round((event.target.scrollTop / (event.target.scrollHeight - event.target.clientHeight)) * 100);
+
+  progress.innerText = percent + ' %';
+
+});
