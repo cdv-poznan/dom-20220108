@@ -56,3 +56,15 @@ function openWindowWithText(text) {
   win.document.write('<h1>' + text + '</h1>');
   win.document.close();
 }
+
+var p1 = document.getElementById('p1'); // 1 element o podanym id
+
+var headings = document.getElementsByClassName('section-heading'); // kolekcja elementów z daną klasą
+
+var passwords = document.getElementsByName('password'); // lista elementów o podanej nazwie
+
+var links = document.getElementsByTagName('a'); // kolekcja elementów z tagiem <a>
+
+var firstHeading = document.querySelector('.section-heading'); // pierwszy element z klasą section-heading
+
+var queriedHeadings = document.querySelectorAll('.section-heading'); // lista elementów z klasą section-heading
