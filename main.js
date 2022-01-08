@@ -151,3 +151,19 @@ function generateTable() {
 }
 
 generateTable();
+
+var span3 = document.createElement('span');
+span3.id = 'span3';
+span3.innerText = 'span 3 content'
+span3.style.backgroundColor = '#ff0';
+
+document.getElementById('parent1').append(span3) // dodanie spana do parent1
+document.getElementById('parent2').append(span3) // dodanie spana do parent2 (+ usunięcie z parent1)
+
+// var span4 = span3.cloneNode(); // klon elementu span3 bez zawartości
+var span4 = span3.cloneNode(true); // klon elementu span3 z zawartością
+console.log(span4);
+
+document.getElementById('parent1').append(span4) // dodanie spana do parent1
+
+span3.remove(); // kasowanie elementu z drzewa
