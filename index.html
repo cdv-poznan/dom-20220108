@@ -15,8 +15,21 @@
     </nav>
 
     <main>
+      <section style="padding:50px">
+        <form id="signup-form">
+          <input id="email-input" name="email" type="text" placeholder="Email" />
+          <span id="email-error"></span>
+          <input id="password-input" name="password" type="password" placeholder="Password" />
+          <input id="retype-input" name="password" type="password" placeholder="Retype password" />
+          <span id="password-error"></span>
+          <!-- <input id="consent-input" type="checkbox" /> -->
+          <button type="submit">submit</button>
+        </form>
+      </section>
+
+
       <section style="height: 400px">
-        <div id="movable2" style="position: fixed;left:0;top:0" class="box md red"></div>
+        <div id="movable2" style="position: fixed;left:0;top:0;display:none" class="box md red"></div>
       </section>
 
       <section>

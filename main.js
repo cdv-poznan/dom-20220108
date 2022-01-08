@@ -361,3 +361,47 @@ keyboardMovable.addEventListener('dblclick', function(event) {
   });
 
 });
+
+
+
+
+
+/**
+ * Zadanie 11
+Napisz skrypt obsługujący formularz rejestracji użytkownika z loginem,
+hasłem oraz potwierdzeniem hasła. Podczas wysyłania formularza powinien
+wyświetlić się komunikat z informacją czy dany login to adres mailowy
+w domenie cdv oraz czy hasła się zgadzają.
+*/
+
+var email = document.getElementById('email-input');
+var password = document.getElementById('password-input');
+var retype = document.getElementById('retype-input');
+
+var form = document.getElementById('signup-form');
+
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  var emailError = document.getElementById('email-error');
+
+  console.log(email.value.slice(-7));
+
+  if (email.value.length > 0 && email.value.slice(-7) === '@cdv.pl') {
+    emailError.style.color = 'green';
+    emailError.innerText = 'Poprawy adres CDV';
+  } else {
+    emailError.style.display = 'block';
+    emailError.style.color = 'red';
+    emailError.innerText = 'Niepoprawny adres email';
+  }
+
+  var passwordError = document.getElementById('password-error');
+  if (password.value.length > 0 && password.value === retype.value) {
+    passwordError.innerText = '';
+  } else {
+    passwordError.style.color = 'red';
+    passwordError.innerText = 'Hasła się nie zgadzają';
+  }
+
+});
