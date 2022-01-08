@@ -114,3 +114,40 @@ function countElements(element) {
 
   return count;
 }
+
+var element1 = document.createElement('div');
+element1.id = 'element1';
+element1.classList.add('box');
+element1.innerText = 'Dynamicznie stworzony element1'
+
+var element2 = document.createElement('span');
+element2.id = 'span1';
+element2.innerText = 'zawartość elementu span';
+
+/**
+ * Zadanie 6
+Napisz skrypt który wygeneruje tabelę table posiadającą
+100 wierszy po 10 kolumn wypełnionych kolejnymi liczbami naturalnymi.
+*/
+
+function generateTable() {
+  var table = document.createElement('table');
+  var counter = 0;
+
+  for (var i = 0; i < 100; i++) {
+    var tr = document.createElement('tr');
+
+    for (var j = 0; j < 10; j++) {
+      var td = document.createElement('td');
+      td.innerText = counter++;
+      tr.append(td);
+    }
+
+    table.append(tr);
+  }
+
+  var container = document.getElementById('table-container');
+  container.append(table);
+}
+
+generateTable();
