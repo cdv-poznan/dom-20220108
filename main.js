@@ -86,3 +86,31 @@ function setElementText(text) {
 }
 
 setElementText('Hello element');
+
+
+// STATYCZNA lista elementów: NodeList
+var nodeList = document.querySelectorAll('.section-heading');
+
+// DYNAMICZNA kolekcja elementów: HTMLCollection
+var links = document.getElementsByTagName('a');
+
+document.getElementById('scroll-container').scrollHeight
+
+document.getElementById('scroll-container').scrollTop
+
+
+/**
+ * Zadanie 5
+Napisz funkcję, która dla przekazanego w argumencie elementu
+zwróci liczność wszystkich elementów w jego poddrzewie wraz z nim samym.
+*/
+
+function countElements(element) {
+  var count = 1;
+
+  for (var i = 0; i < element.children.length; i++) {
+    count += countElements(element.children[i]);
+  }
+
+  return count;
+}
