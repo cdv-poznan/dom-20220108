@@ -36,3 +36,23 @@ function setRandomTitle() {
     document.title = title;
   }, 1000);
 }
+
+
+function newWindow() {
+
+  var newWindowObject = window.open('/child.html', 'nazwaOkna1', 'status,width=300,height=300');
+  console.log(newWindowObject);
+
+}
+
+/*
+ * Zadanie 3
+  Napisz funkcję, która otwiera nowe okno przeglądarki
+  i wyświetla w nim przekazany w argumencie tekst.
+*/
+
+function openWindowWithText(text) {
+  var win = window.open('/child.html', 'child', 'status,width=300,height=300');
+  win.document.write('<h1>' + text + '</h1>');
+  win.document.close();
+}
