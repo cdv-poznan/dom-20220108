@@ -68,3 +68,9 @@ var links = document.getElementsByTagName('a'); // kolekcja elementów z tagiem 
 var firstHeading = document.querySelector('.section-heading'); // pierwszy element z klasą section-heading
 
 var queriedHeadings = document.querySelectorAll('.section-heading'); // lista elementów z klasą section-heading
+
+// inner text
+var lorem = document.getElementById('p1');
+lorem.innerText = 'Nowa wartość tekstowa';
+
+p1.style.backgroundColor = '#f0f';
