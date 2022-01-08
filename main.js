@@ -162,8 +162,54 @@ document.getElementById('parent2').append(span3) // dodanie spana do parent2 (+ 
 
 // var span4 = span3.cloneNode(); // klon elementu span3 bez zawartości
 var span4 = span3.cloneNode(true); // klon elementu span3 z zawartością
-console.log(span4);
 
 document.getElementById('parent1').append(span4) // dodanie spana do parent1
 
 span3.remove(); // kasowanie elementu z drzewa
+
+// Wydarzenia
+
+document.addEventListener('DOMContentLoaded', function(event) {
+  console.log(event);
+});
+
+window.addEventListener('load', function(event) {
+  console.log(event);
+});
+
+
+var clickListener = function(event) {
+  console.log('click', event);
+}
+
+// document.addEventListener('click', clickListener);
+
+var parent2 = document.getElementById('parent2');
+parent2.addEventListener('click', function(event) {
+  console.log(event.type);
+  console.log(event.target);
+  console.log(event.currentTarget);
+});
+
+var button1 = document.getElementById('button1');
+button1.addEventListener('click', function() {
+  console.log('button has been clicked!');
+});
+
+var link1 = document.getElementById('child-link');
+link1.addEventListener('click', function(event) {
+  event.preventDefault();
+});
+
+/* Zadanie 7
+Napisz skrypt pozwalający na oznaczenie przerywaną ramką klikniętego elementu na dwie sekundy.
+*/
+
+document.addEventListener('click', function(event) {
+  var target = event.target;
+  target.style.border = '1px dotted';
+
+  setTimeout(function(){
+    target.style.border = 'none';
+  }, 2000);
+});
