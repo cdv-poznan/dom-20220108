@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#lorem">Lorem ipsum</a>
+      <a href="#forms">Forms</a>
+      <a href="#links">Links</a>
+      <a href="#images">Images</a>
+      <a href="#iframes">IFrames</a>
+    </nav>
+
+    <main>
+      <section></section>
+
+      <section id="lorem" class="example">
+        <h1 id="lorem_heading" class="main-title section-heading">
+          Hello DOM!
+        </h1>
+        <p>
+          <b>Lorem Ipsum</b> is simply dummy text of the printing and
+          typesetting industry.
+          <a href="https://en.wikipedia.org/wiki/Lorem_ipsum" class="link-wiki"
+            >Lorem Ipsum</a
+          >
+          has been the industry's standard dummy text ever since the 1500s, when
+          an unknown printer took a galley of type and scrambled it to make a
+          type specimen book. It has survived <kbd>Enter</kbd> not only five
+          centuries, but also the leap into <em>electronic typesetting</em>,
+          remaining essentially unchanged. It was popularised in the
+          <string>1960s</string> with the release of
+          <code>Letraset</code> sheets containing Lorem Ipsum passages, and more
+          recently with desktop publishing software like
+          <i>Aldus PageMaker</i> including versions of Lorem Ipsum<sup>2</sup>.
+        </p>
+      </section>
+
+      <section id="links" class="example">
+        <h2 id="links_heading" class="section-heading">Links</h2>
+        <ul>
+          <li id="to-clone" class="list-item">
+            <a
+              id="github-link"
+              class="link github external"
+              href="https://github.com/juszczak"
+              target="_blank"
+              >GitHub</a
+            >
+          </li>
+          <li>
+            <a class="link" href="https://cdv.pl/" target="_blank">CDV</a>
+          </li>
+          <li>
+            <a
+              class="link external"
+              href="https://developer.mozilla.org/"
+              target="_blank"
+              >MDN web docs</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://en.wikipedia.org/wiki/Main_Page"
+              class="link-wiki"
+              target="_blank"
+              >Wikipedia</a
+            >
+          </li>
+        </ul>
+      </section>
+
+      <section id="forms" class="example">
+        <h2 id="forms_heading">Forms</h2>
+        <form id="form">
+          <label>
+            <input
+              type="text"
+              name="name"
+              placeholder="Name"
+              autocomplete="username"
+            />
+          </label>
+          <label>
+            <input name="email" placeholder="E-mail" autocomplete="email" />
+          </label>
+          <label>
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              autocomplete="current-password"
+            />
+          </label>
+          <label>
+            <input type="checkbox" required />
+            <span>I agree to everything!</span></label
+          >
+          <button type="submit">Send!</button>
+        </form>
+      </section>
+
+      <section id="images" class="example">
+        <h2 id="images_heading" class="section-heading">Images</h2>
+        <img
+          class="placeholder-image placeholder-image-largr"
+          src="//via.placeholder.com/450x150"
+        />
+        <img
+          class="placeholder-image placeholder-image-small"
+          src="//via.placeholder.com/150x150"
+        />
+        <img class="placeholder-image" src="//via.placeholder.com/300x150" />
+      </section>
+
+      <section id="iframes">
+        <h2 id="iframes_heading" class="section-heading">IFrame</h2>
+
+        <iframe width="300" height="200" src="/frame.html"></iframe>
+
+        <iframe
+          id="openstreetmap"
+          name="openstreetmap"
+          width="300"
+          height="200"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik"
+        >
+        </iframe>
+      </section>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>
