@@ -24,3 +24,15 @@ function delayMessage(text) {
     console.log(text, '(', timeout, ')');
   }, timeout);
 }
+
+/**
+ * Zadanie 2
+   Napisz skrypt, który co kilka sekund ustawi losową wartość jako tytuł strony.
+ */
+
+function setRandomTitle() {
+  setInterval(function() {
+    var title = Math.random().toString(36);
+    document.title = title;
+  }, 1000);
+}
