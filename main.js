@@ -74,3 +74,15 @@ var lorem = document.getElementById('p1');
 lorem.innerText = 'Nowa wartość tekstowa';
 
 p1.style.backgroundColor = '#f0f';
+
+/**
+ * Zadanie 4
+Napisz funkcję ustawiającą przekazany jako argument tekst dla wskazanego elementu drzewa DOM.
+*/
+
+function setElementText(text) {
+  var element = document.getElementById('p1');
+  element.innerText = text;
+}
+
+setElementText('Hello element');
