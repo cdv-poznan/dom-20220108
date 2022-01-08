@@ -169,6 +169,7 @@ span3.remove(); // kasowanie elementu z drzewa
 
 // Wydarzenia
 
+/*
 document.addEventListener('DOMContentLoaded', function(event) {
   console.log(event);
 });
@@ -176,7 +177,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
 window.addEventListener('load', function(event) {
   console.log(event);
 });
-
+*/
 
 var clickListener = function(event) {
   console.log('click', event);
@@ -205,6 +206,7 @@ link1.addEventListener('click', function(event) {
 Napisz skrypt pozwalający na oznaczenie przerywaną ramką klikniętego elementu na dwie sekundy.
 */
 
+/*
 document.addEventListener('click', function(event) {
   var target = event.target;
   target.style.border = '1px dotted';
@@ -212,4 +214,31 @@ document.addEventListener('click', function(event) {
   setTimeout(function(){
     target.style.border = 'none';
   }, 2000);
+});
+*/
+
+document.getElementById('button2').addEventListener('mousemove', function(event) {
+  console.log(event.type, event.clientX, event.clientY);
+});
+
+
+/*
+ * Zadanie 8
+Napisz skrypt pozwalający na zaznaczenie danego elementu w drzewie DOM
+podwójnymkliknięciem myszki a następnie na przeniesienie go w
+miejsce wystąpienia kolejnego pojedynczego kliknięcia.
+*/
+
+var movable = document.getElementById('movable');
+
+movable.addEventListener('dblclick', function(event) {
+  event.target.style.border = '2px dotted #110';
+
+  document.addEventListener('click', function(secondEvent) {
+    event.target.style.position = 'fixed';
+    event.target.style.border = 'none';
+    event.target.style.top = secondEvent.clientY + 'px';
+    event.target.style.left = secondEvent.clientX + 'px';
+  }, { once: true });
+
 });
